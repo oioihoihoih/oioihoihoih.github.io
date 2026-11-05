@@ -1,0 +1,75 @@
+/* Site-specific overrides on top of vCard's style.css */
+
+:root {
+  --ff-poppins: 'Poppins', 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}
+
+body { word-break: keep-all; overflow-wrap: break-word; }
+
+/* avatar: square crop for a real photo */
+.avatar-box img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* show the full email instead of cutting it off */
+.contact-info .contact-link {
+  white-space: normal;
+}
+
+/* sidebar plain-text contact */
+.contact-text {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+}
+
+/* service icons (ionicons instead of images) */
+.service-icon-box ion-icon {
+  display: block;
+  margin: auto;
+  font-size: 40px;
+  color: var(--orange-yellow-crayola);
+}
+
+/* skills as tags, no percentage bars */
+.skills-item h5 { margin-bottom: 10px; }
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+  border-radius: 8px;
+  padding: 5px 12px;
+}
+
+/* project thumbnails: same ratio for every card */
+.project-img {
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+
+.project-img img { object-position: top center; }
+
+.project-title { text-transform: none; }
+
+/* 4 projects: 2 columns on wide screens so no card sits alone */
+@media (min-width: 1024px) {
+  .project-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+.project-note {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-top: 20px;
+}
